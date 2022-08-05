@@ -1,12 +1,14 @@
 const entrada = document.getElementById("num");
 const button = document.getElementById("button")
+let div = document.getElementById("div"); 
 
 console.log(entrada)
 console.log(button)
 
 button.onclick = gerarLink;
 
-function gerarLink() {    
+function gerarLink() {     
+    
     let valorIni = entrada.value;    
     let tratado = "";
     
@@ -42,26 +44,36 @@ function gerarLink() {
 }
 
 function showLink (n1,n2,n3) {
+       
+    div.innerHTML = ""
     const baseLink = "https://wa.me/55";
     let link1 = document.createElement("a");
     link1.value = `${baseLink}${n1}`
     link1.innerHTML = link1.value
     link1.href = link1.value
     console.log(link1.value)
-    document.body.appendChild(link1)
+    div.appendChild(link1)
 
     let link2 = document.createElement("a");
     link2.value = `${baseLink}${n2}`
     link2.innerHTML = link2.value
     link2.href = link2.value
     console.log(link2.value)
-    document.body.appendChild(link2)
+    div.appendChild(link2)
 
     let link3 = document.createElement("a");
     link3.value = `${baseLink}${n3}`
     link3.innerHTML = link3.value
     link3.href = link3.value
     console.log(link3.value)
-    document.body.appendChild(link3)
+    div.appendChild(link3)    
+
+    document.body.appendChild(div)
+
+    entrada.value = ""
+
+    
 }
+
+
 

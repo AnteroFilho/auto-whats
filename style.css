@@ -12,3 +12,7 @@ a{
     font-size: 30px;
     color: green;
 }
+div{
+    display: flex;
+    flex-direction: column;
+}
